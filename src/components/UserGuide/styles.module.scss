@@ -1,0 +1,253 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+.headline {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 56px;
+  text-align: center;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+  margin-bottom: 80px;
+
+  .info_item {
+    width: 280px;
+    height: 164px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
+}
+
+.credit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .credit_text,
+  .credit_img {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .credit_text {
+    max-width: 592px;
+    margin-right: 32px;
+    .title {
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 40px;
+      margin-bottom: 18px;
+    }
+
+    p {
+      margin-bottom: 24px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 28px;
+      color: #5e646a;
+      word-wrap: break-word;
+      word-break: break-word;
+      white-space: normal;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .images {
+    max-width: 100%;
+    height: auto;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    z-index: 2;
+  }
+
+  .image_truck {
+    z-index: 1;
+  }
+}
+
+@media (max-width: 1200px) {
+  .wrapper {
+    padding: 56px 16px;
+  }
+
+  .info {
+    margin-top: 42px;
+    margin-bottom: 56px;
+    max-width: 720px;
+
+    .info_item {
+      display: flex;
+      width: 342px;
+      height: 76px;
+      margin-bottom: 32px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      img {
+        width: 56px;
+        height: 56px;
+        margin-right: 16px;
+      }
+    }
+  }
+
+  .credit_text {
+    max-width: 352px !important;
+    margin-right: 24px !important;
+
+    .title {
+      display: block;
+      font-size: 20px !important;
+      font-weight: 600;
+      line-height: 24px;
+      margin-bottom: 15px !important;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    justify-content: center;
+    align-items: center;
+    padding: 56px 20px;
+  }
+
+  .info {
+    justify-content: space-around;
+  }
+
+  .credit {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 375px) {
+  .wrapper {
+    padding: 56px 16px;
+  }
+  .headline {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+  }
+
+  .info {
+    margin-top: 26px;
+    margin-bottom: 56px;
+    max-width: 720px;
+
+    .info_item {
+      display: flex;
+      width: 342px;
+      height: 76px;
+      margin-bottom: 32px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      img {
+        width: 56px;
+        height: 56px;
+        margin-right: 16px;
+      }
+    }
+  }
+  .credit {
+    img {
+      margin-bottom: 7px;
+    }
+  }
+  .credit_text {
+    max-width: 100%;
+    text-align: center;
+    margin-right: 0 !important;
+    .title {
+      font-size: 20px;
+      font-weight: 600;
+
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .wrapper {
+    padding: 56px 16px;
+  }
+  .headline {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+  }
+  .info {
+    display: flex;
+    margin-top: 26px;
+    margin-bottom: 56px;
+    .info_item {
+      display: flex;
+
+      justify-content: space-between;
+      width: 288px;
+      height: auto;
+      margin-bottom: 32px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      img {
+        width: 56px;
+        height: 56px;
+        margin-right: 16px;
+      }
+    }
+  }
+
+  .credit {
+    flex-wrap: wrap-reverse;
+    img {
+      margin-bottom: 7px;
+    }
+  }
+  .credit_text {
+    text-align: center;
+    margin-right: 0 !important;
+    .title {
+      display: block;
+      font-size: 20px !important;
+      font-weight: 600;
+      line-height: 24px !important;
+      margin-bottom: 15px !important;
+    }
+  }
+}

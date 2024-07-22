@@ -1,0 +1,77 @@
+.slick-slider {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slick-slide {
+    float: inline-start;
+}
+
+.slick-initialized .slick-slide {
+    display: block;
+}
+
+.slick-track {
+    display: flex;
+    margin: 32px 0 50px 0;
+
+    .slick-slide {
+        height: auto;
+        display: flex;
+
+        > div {
+            display: flex;
+        }
+    }
+}
+
+.slick-slider {
+    display: flex;
+}
+
+.slick-dots li {
+    margin: 0;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #2a6cea;
+    opacity: 1;
+}
+
+.slick-dots li button:before {
+    font-size: 30px;
+    color: #c2c8cd;
+    opacity: 1;
+}
+
+.slick-slide {
+    padding: 0 16px;
+}
