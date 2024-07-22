@@ -3,27 +3,44 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    mode: 'production',
-    entry: './src/index.js',
+    entry: './src/index.tsx',
     output: {
-        path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist'),
         publicPath: '/',
     },
+    mode: 'production',
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.tsx?$/,
+                use: 'ts-loader',
                 exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                },
             },
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
             },
+            {
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            outputPath: 'images',
+                            name: '[name].[ext]',
+                        },
+                    },
+                ],
+            },
         ],
+    },
+    resolve: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -32,8 +49,8 @@ module.exports = {
         }),
     ],
     devServer: {
-        contentBase: path.join(__dirname, 'build'),
+        static: path.join(__dirname, 'dist'),
         compress: true,
-        port: 9000,
+        port: 3000,
     },
 };
